@@ -1,7 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwndCMS.Data", "NorthwndCMS.Data\NorthwndCMS.Data.csproj", "{F1C22F6A-72C2-43E3-9E28-2097E350EEC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwndCMS.App", "NorthwndCMS.App\NorthwndCMS.App.csproj", "{DE0AEA01-20EA-41CC-94F1-97B6FA2EBE02}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1C22F6A-72C2-43E3-9E28-2097E350EEC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1C22F6A-72C2-43E3-9E28-2097E350EEC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1C22F6A-72C2-43E3-9E28-2097E350EEC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1C22F6A-72C2-43E3-9E28-2097E350EEC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE0AEA01-20EA-41CC-94F1-97B6FA2EBE02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE0AEA01-20EA-41CC-94F1-97B6FA2EBE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE0AEA01-20EA-41CC-94F1-97B6FA2EBE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE0AEA01-20EA-41CC-94F1-97B6FA2EBE02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
