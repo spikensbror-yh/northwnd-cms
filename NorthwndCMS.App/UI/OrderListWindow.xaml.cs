@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NorthwndCMS.App
+namespace NorthwndCMS.App.UI
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for OrderListWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OrderListWindow : Window
     {
-        public MainWindow()
+        public OrderListWindow()
         {
             InitializeComponent();
-        }
-
-        private void OrdersButton_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new UI.OrderListWindow();
-            window.Show();
         }
     }
 }
