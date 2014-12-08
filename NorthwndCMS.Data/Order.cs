@@ -11,6 +11,8 @@ namespace NorthwndCMS.Data
     [Table(Name = "Orders")]
     public class Order
     {
+        #region Columns
+
         [Column(Name = "OrderID", IsPrimaryKey = true, IsDbGenerated = true, AutoSync = AutoSync.OnInsert)]
         public int Id { get; set; }
 
@@ -19,15 +21,6 @@ namespace NorthwndCMS.Data
 
         [Column(Name = "EmployeeID")]
         private int? _EmployeeId { get; set; }
-
-        private EntityRef<Employee> _Employee = new EntityRef<Employee>();
-
-        [Association(Name = "FK_Orders_Employees", IsForeignKey = true, Storage = "_Employee", ThisKey = "_EmployeeId")]
-        public Employee Employee
-        {
-            get { return _Employee.Entity; }
-            set { _Employee.Entity = value; }
-        }
 
         [Column(Name = "OrderDate")]
         public DateTime? OrderDate { get; set; }
@@ -61,5 +54,20 @@ namespace NorthwndCMS.Data
 
         [Column(Name = "ShipCountry")]
         public string ShipCountry { get; set; }
+
+        #endregion
+
+        #region Associations
+
+        private EntityRef<Employee> _Employee = new EntityRef<Employee>();
+
+        [Association(Name = "FK_Orders_Employees", IsForeignKey = true, Storage = "_Employee", ThisKey = "_EmployeeId")]
+        public Employee Employee
+        {
+            get { return _Employee.Entity; }
+            set { _Employee.Entity = value; }
+        }
+
+        #endregion
     }
 }

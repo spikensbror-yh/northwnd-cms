@@ -20,9 +20,10 @@ namespace NorthwndCMS.App.UI
     /// </summary>
     public partial class OrderListWindow : Window
     {
-        public OrderListWindow(List<Order> Orders)
+        public OrderListWindow(IEnumerable<Order> Orders)
         {
             InitializeComponent();
+
             OrderList.ItemsSource = Orders;
         }
     }
