@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using NorthwndCMS.Data;
 
 namespace NorthwndCMS.App.UI
 {
@@ -19,9 +20,10 @@ namespace NorthwndCMS.App.UI
     /// </summary>
     public partial class OrderListWindow : Window
     {
-        public OrderListWindow()
+        public OrderListWindow(List<Order> Orders)
         {
             InitializeComponent();
+            OrderList.ItemsSource = Orders;
         }
     }
 }

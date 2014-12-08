@@ -3,14 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Orders" Height="353" Width="562">
     <Grid>
-        <ListView Margin="10,10,10,43">
+        <ListView x:Name="OrderList" Margin="10,10,10,43">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Id" Width="30"/>
-                    <GridViewColumn Header="Customer" Width="200"/>
-                    <GridViewColumn Header="Order Date" Width="100"/>
-                    <GridViewColumn Header="Required Date" Width="100"/>
-                    <GridViewColumn Header="Shipped Date" Width="100"/>
+                    <GridViewColumn Header="Id" Width="50" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="Customer" Width="200" DisplayMemberBinding="{Binding CustomerId}"/>
+                    <GridViewColumn Header="Employee" Width="200" DisplayMemberBinding="{Binding Employee.FullName}"/>
+                    <GridViewColumn Header="Order Date" Width="100" DisplayMemberBinding="{Binding OrderDate}"/>
+                    <GridViewColumn Header="Required Date" Width="100" DisplayMemberBinding="{Binding RequiredDate}"/>
+                    <GridViewColumn Header="Shipped Date" Width="100" DisplayMemberBinding="{Binding ShippedDate}"/>
                 </GridView>
             </ListView.View>
         </ListView>

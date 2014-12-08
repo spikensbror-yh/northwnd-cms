@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using NorthwndCMS.Data;
 
 namespace NorthwndCMS.App
 {
@@ -20,14 +21,17 @@ namespace NorthwndCMS.App
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Northwind _Northwind;
+
         public MainWindow()
         {
             InitializeComponent();
+            _Northwind = new Northwind((string)Properties.Settings.Default["Database"]);
         }
 
         private void OrdersButton_Click(object sender, RoutedEventArgs e)
         {
-            var window = new UI.OrderListWindow();
+            var window = new UI.OrderListWindow(_Northwind.Orders.ToList());
             window.Show();
         }
     }
