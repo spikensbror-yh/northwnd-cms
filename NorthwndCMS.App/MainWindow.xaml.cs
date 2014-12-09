@@ -21,17 +21,17 @@ namespace NorthwndCMS.App
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Northwind _Northwind;
+        public Northwind Northwind { get; private set; }
 
         public MainWindow()
         {
             InitializeComponent();
-            _Northwind = new Northwind((string)Properties.Settings.Default["Database"]);
+            Northwind = new Northwind((string)Properties.Settings.Default["Database"]);
         }
 
         private void OrdersButton_Click(object sender, RoutedEventArgs e)
         {
-            var window = new UI.OrderListWindow(_Northwind.Orders.ToList());
+            var window = new UI.OrderListWindow(Northwind, Northwind.Orders);
             window.Show();
         }
     }

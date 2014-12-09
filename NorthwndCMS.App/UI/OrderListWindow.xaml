@@ -17,10 +17,10 @@
         </ListView>
         <Button Content="View" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="56" Height="28"/>
         <Button Content="Add" HorizontalAlignment="Left" Margin="71,0,0,10" VerticalAlignment="Bottom" Width="56" Height="28"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="132,0,0,10" VerticalAlignment="Bottom" Width="56" Height="28"/>
-        <Button Content="Previous" HorizontalAlignment="Right" Margin="0,0,172,10" VerticalAlignment="Bottom" Width="59" Height="28"/>
-        <Label Content="19 / 100" HorizontalAlignment="Right" Margin="0,0,74,10" VerticalAlignment="Bottom" Height="28" Width="93" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Button Content="Next" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="59" Height="28"/>
+        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Margin="132,0,0,10" VerticalAlignment="Bottom" Width="56" Height="28"/>
+        <Button x:Name="PreviousButton" Content="Previous" HorizontalAlignment="Right" Margin="0,0,172,10" VerticalAlignment="Bottom" Width="59" Height="28" Click="PreviousButton_Click"/>
+        <Label x:Name="PageLabel" Content="0 / 0" HorizontalAlignment="Right" Margin="0,0,74,10" VerticalAlignment="Bottom" Height="28" Width="93" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="NextButton" Content="Next" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="59" Height="28" Click="NextButton_Click"/>
 
     </Grid>
 </Window>

@@ -20,11 +20,32 @@ namespace NorthwndCMS.App.UI
     /// </summary>
     public partial class OrderListWindow : Window
     {
-        public OrderListWindow(IEnumerable<Order> Orders)
+        public Northwind Northwind { get; private set; }
+        public IEnumerable<Order> Orders { get; private set; }
+        public Pagination<Order> Page { get; private set; }
+
+        public OrderListWindow(Northwind northwind, IEnumerable<Order> orders)
         {
             InitializeComponent();
 
-            OrderList.ItemsSource = Orders;
+            Northwind = northwind;
+            Orders = orders;
+
+            Page = new Pagination<Order>(Orders);
+            OrderList.ItemsSource = Page.Current();
+            PageLabel.Content = Page.ToString();
+        }
+
+        private void NextButton_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.ItemsSource = Page.Next();
+            PageLabel.Content = Page.ToString();
+        }
+
+        private void PreviousButton_Click(object sender, RoutedEventArgs e)
+        {
+            OrderList.ItemsSource = Page.Previous();
+            PageLabel.Content = Page.ToString();
         }
     }
 }
