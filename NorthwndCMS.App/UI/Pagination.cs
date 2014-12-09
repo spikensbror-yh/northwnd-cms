@@ -8,12 +8,25 @@ namespace NorthwndCMS.App.UI
 {
     public class Pagination<T>
     {
+        #region Constants
+
         public const int DEFAULT_PER_PAGE = 15;
 
+        #endregion
+
+        #region Properties
+
         public IEnumerable<T> Entities { get; private set; }
+
         public int PerPage { get; set; }
+
         public int Pages { get { return (int)Math.Ceiling((double)Entities.Count() / PerPage); } }
+
         public int Page { get; set; }
+
+        #endregion
+
+        #region Constructor
 
         public Pagination(IEnumerable<T> entities, int page = 1, int perPage = DEFAULT_PER_PAGE)
         {
@@ -21,6 +34,10 @@ namespace NorthwndCMS.App.UI
             Page = page;
             PerPage = perPage;
         }
+
+        #endregion
+
+        #region Methods
 
         public IEnumerable<T> Next()
         {
@@ -47,5 +64,7 @@ namespace NorthwndCMS.App.UI
         {
             return string.Format("{0} / {1}", Page, Pages);
         }
+
+        #endregion
     }
 }
