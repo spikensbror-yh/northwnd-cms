@@ -47,5 +47,17 @@ namespace NorthwndCMS.App.UI
             OrderList.ItemsSource = Page.Previous();
             PageLabel.Content = Page.ToString();
         }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            var selected = OrderList.SelectedItems;
+            foreach (Order order in selected)
+            {
+                Northwind.Orders.DeleteOnSubmit(order);
+            }
+
+            Northwind.SubmitChanges();
+            OrderList.Items.Refresh();
+        }
     }
 }
