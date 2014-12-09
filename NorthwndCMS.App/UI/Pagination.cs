@@ -8,12 +8,14 @@ namespace NorthwndCMS.App.UI
 {
     public class Pagination<T>
     {
+        public const int DEFAULT_PER_PAGE = 15;
+
         public IEnumerable<T> Entities { get; private set; }
         public int PerPage { get; set; }
         public int Pages { get { return (int)Math.Ceiling((double)Entities.Count() / PerPage); } }
         public int Page { get; set; }
 
-        public Pagination(IEnumerable<T> entities, int page = 1, int perPage = 10)
+        public Pagination(IEnumerable<T> entities, int page = 1, int perPage = DEFAULT_PER_PAGE)
         {
             Entities = entities;
             Page = page;
