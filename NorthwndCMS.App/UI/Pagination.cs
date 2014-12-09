@@ -10,7 +10,7 @@ namespace NorthwndCMS.App.UI
     {
         #region Constants
 
-        public const int DEFAULT_PER_PAGE = 15;
+        public const int DEFAULT_PER_PAGE = 50;
 
         #endregion
 
