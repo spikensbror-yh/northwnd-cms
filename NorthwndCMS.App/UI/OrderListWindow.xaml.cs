@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using NorthwndCMS.Data;
+using System.ComponentModel;
 
 namespace NorthwndCMS.App.UI
 {
     /// <summary>
     /// Interaction logic for OrderListWindow.xaml
     /// </summary>
-    public partial class OrderListWindow : Window
+    public partial class OrderListWindow : ListWindow
     {
         public Northwind Northwind { get; private set; }
         public IEnumerable<Order> Orders { get; private set; }
@@ -31,6 +32,7 @@ namespace NorthwndCMS.App.UI
             Northwind = northwind;
             Orders = orders;
             Paginator = new Paginator<Order>(Orders);
+            List = OrderList;
 
             OrderList.ItemsSource = Paginator.Current();
             PageLabel.Content = Paginator.ToString();

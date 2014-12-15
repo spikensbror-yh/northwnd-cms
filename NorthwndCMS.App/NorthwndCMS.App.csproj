@@ -54,10 +54,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UI\ListWindow.cs" />
     <Compile Include="UI\OrderListWindow.xaml.cs">
       <DependentUpon>OrderListWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Paginator.cs" />
+    <Compile Include="UI\SortAdorner.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
