@@ -20,7 +20,7 @@ namespace NorthwndCMS.Data
         public string CustomerId { get; set; }
 
         [Column(Name = "EmployeeID")]
-        private int? _EmployeeId { get; set; }
+        public int? EmployeeId { get; set; }
 
         [Column(Name = "OrderDate")]
         public DateTime? OrderDate { get; set; }
@@ -62,14 +62,14 @@ namespace NorthwndCMS.Data
         private EntityRef<Employee> _Employee = new EntityRef<Employee>();
         private EntitySet<OrderDetail> _OrderDetails = new EntitySet<OrderDetail>();
 
-        [Association(Name = "FK_Orders_Employees", IsForeignKey = true, Storage = "_Employee", ThisKey = "_EmployeeId")]
+        [Association(Name = "FK_Orders_Employees", IsForeignKey = true, Storage = "_Employee", ThisKey = "EmployeeId")]
         public Employee Employee
         {
             get { return _Employee.Entity; }
             set { _Employee.Entity = value; }
         }
 
-        [Association(Storage = "_OrderDetails", OtherKey = "OrderId")]
+        [Association(Name = "FK_Order_Details_Orders", Storage = "_OrderDetails", OtherKey = "OrderId", DeleteRule = "CASCADE")]
         public EntitySet<OrderDetail> OrderDetails
         {
             get { return _OrderDetails; }

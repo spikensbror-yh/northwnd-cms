@@ -68,7 +68,7 @@ namespace NorthwndCMS.Data
         public string Notes { get; set; }
 
         [Column(Name = "ReportsTo")]
-        private int? _ReportsToId { get; set; }
+        public int? ReportsToId { get; set; }
 
         [Column(Name = "PhotoPath")]
         public string PhotoPath { get; set; }
@@ -78,12 +78,20 @@ namespace NorthwndCMS.Data
         #region Associations
 
         private EntityRef<Employee> _ReportsTo = new EntityRef<Employee>();
+        private EntitySet<Order> _Orders = new EntitySet<Order>();
 
-        [Association(Name = "FK_Employees_Employees", IsForeignKey = true, Storage = "_ReportsTo", ThisKey = "_ReportsToId")]
+        [Association(Name = "FK_Employees_Employees", IsForeignKey = true, Storage = "_ReportsTo", ThisKey = "ReportsToId")]
         public Employee ReportsTo
         {
             get { return _ReportsTo.Entity; }
             set { _ReportsTo.Entity = value; }
+        }
+
+        [Association(Name = "FK_Orders_Employees", Storage = "_Orders", OtherKey = "EmployeeId")]
+        public EntitySet<Order> Orders
+        {
+            get { return _Orders; }
+            set { _Orders.Assign(value); }
         }
 
         #endregion
