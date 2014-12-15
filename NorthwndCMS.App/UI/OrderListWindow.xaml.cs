@@ -21,9 +21,15 @@ namespace NorthwndCMS.App.UI
     /// </summary>
     public partial class OrderListWindow : ListWindow
     {
+        #region Properties
+
         public Northwind Northwind { get; private set; }
         public IEnumerable<Order> Orders { get; private set; }
         public Paginator<Order> Paginator { get; private set; }
+
+        #endregion
+
+        #region Construct
 
         public OrderListWindow(Northwind northwind, IEnumerable<Order> orders)
         {
@@ -38,6 +44,10 @@ namespace NorthwndCMS.App.UI
             PageLabel.Content = Paginator.ToString();
         }
 
+        #endregion
+
+        #region Pagination Event Handlers
+
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
             OrderList.ItemsSource = Paginator.Next();
@@ -49,6 +59,10 @@ namespace NorthwndCMS.App.UI
             OrderList.ItemsSource = Paginator.Previous();
             PageLabel.Content = Paginator.ToString();
         }
+
+        #endregion
+
+        #region CRUD Button Event Handlers
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
@@ -62,5 +76,7 @@ namespace NorthwndCMS.App.UI
             OrderList.ItemsSource = Paginator.Current();
             PageLabel.Content = Paginator.ToString();
         }
+
+        #endregion
     }
 }

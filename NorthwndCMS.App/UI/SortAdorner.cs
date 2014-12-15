@@ -12,15 +12,29 @@ namespace NorthwndCMS.App.UI
 {
     class SortAdorner : Adorner
     {
-        private readonly static Geometry _Ascending = Geometry.Parse("M 0,0 L 10,0 L 5,5 Z");
-        private readonly static Geometry _Descending = Geometry.Parse("M 0,5 L 10,5 L 5,0 Z");
+        #region Constants
+
+        private const Geometry ASCENDING = Geometry.Parse("M 0,0 L 10,0 L 5,5 Z");
+        private const Geometry DESCENDING = Geometry.Parse("M 0,5 L 10,5 L 5,0 Z");
+
+        #endregion
+
+        #region Properties
 
         public ListSortDirection Direction { get; private set; }
+
+        #endregion
+
+        #region Construct
 
         public SortAdorner(UIElement element, ListSortDirection direction) : base(element)
         {
             Direction = direction;
         }
+
+        #endregion
+
+        #region Method Overrides
 
         protected override void OnRender(DrawingContext drawingContext)
         {
@@ -41,10 +55,12 @@ namespace NorthwndCMS.App.UI
             drawingContext.DrawGeometry(
                 Brushes.Black,
                 null,
-                Direction == ListSortDirection.Ascending ? _Ascending : _Descending
+                Direction == ListSortDirection.Ascending ? ASCENDING : DESCENDING
             );
 
             drawingContext.Pop();
         }
+
+        #endregion
     }
 }

@@ -12,9 +12,20 @@ namespace NorthwndCMS.App.UI
 {
     public partial class ListWindow : Window
     {
+        #region Properties
+
         public ListView List { get; protected set; }
+
+        #endregion
+
+        #region Fields
+
         private GridViewColumnHeader _ActiveColumn = null;
         private SortAdorner _ColumnAdorner = null;
+
+        #endregion
+
+        #region Event Handlers
 
         protected void List_Sort(object sender, RoutedEventArgs e)
         {
@@ -49,5 +60,7 @@ namespace NorthwndCMS.App.UI
             AdornerLayer.GetAdornerLayer(_ActiveColumn).Add(_ColumnAdorner);
             List.Items.SortDescriptions.Add(new SortDescription(field, direction));
         }
+
+        #endregion
     }
 }
