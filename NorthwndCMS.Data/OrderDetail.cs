@@ -41,6 +41,8 @@ namespace NorthwndCMS.Data
             set { _Order.Entity = value; }
         }
 
+        // TODO: Product association.
+
         #endregion
     }
 }

@@ -63,6 +63,8 @@ namespace NorthwndCMS.Data
         private EntitySet<OrderDetail> _OrderDetails = new EntitySet<OrderDetail>();
         private EntitySet<Complaint> _Complaints = new EntitySet<Complaint>();
 
+        // TODO: Customer association.
+
         [Association(Name = "FK_Orders_Employees", IsForeignKey = true, Storage = "_Employee", ThisKey = "EmployeeId")]
         public Employee Employee
         {

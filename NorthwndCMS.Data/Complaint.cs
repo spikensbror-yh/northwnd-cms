@@ -51,6 +51,8 @@ namespace NorthwndCMS.Data
             set { _Order.Entity = value; }
         }
 
+        // TODO: ComplaintCause association.
+
         [Association(Name = "FK_Complaints_Employees", IsForeignKey = true, Storage = "_Employee", ThisKey = "RegByEmployeeId")]
         public Employee Employee
         {
