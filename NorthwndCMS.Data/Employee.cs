@@ -79,6 +79,7 @@ namespace NorthwndCMS.Data
 
         private EntityRef<Employee> _ReportsTo = new EntityRef<Employee>();
         private EntitySet<Order> _Orders = new EntitySet<Order>();
+        private EntitySet<Complaint> _Complaints = new EntitySet<Complaint>();
 
         [Association(Name = "FK_Employees_Employees", IsForeignKey = true, Storage = "_ReportsTo", ThisKey = "ReportsToId")]
         public Employee ReportsTo
@@ -92,6 +93,13 @@ namespace NorthwndCMS.Data
         {
             get { return _Orders; }
             set { _Orders.Assign(value); }
+        }
+
+        [Association(Name = "FK_Complaints_Employees", Storage = "_Complaints", OtherKey = "RegByEmployeeId")]
+        public EntitySet<Complaint> Complaints
+        {
+            get { return _Complaints; }
+            set { _Complaints.Assign(value); }
         }
 
         #endregion
