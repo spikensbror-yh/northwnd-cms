@@ -57,7 +57,7 @@
     <Compile Include="UI\OrderListWindow.xaml.cs">
       <DependentUpon>OrderListWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Pagination.cs" />
+    <Compile Include="UI\Paginator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

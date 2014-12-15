@@ -50,15 +50,15 @@ namespace NorthwndCMS.App.UI
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Cascading delete to remove order details as well.
-
             foreach (Order order in OrderList.SelectedItems)
             {
+                Northwind.OrderDetails.DeleteAllOnSubmit(order.OrderDetails);
                 Northwind.Orders.DeleteOnSubmit(order);
             }
-
             Northwind.SubmitChanges();
-            OrderList.Items.Refresh();
+
+            OrderList.ItemsSource = Paginator.Current();
+            PageLabel.Content = Paginator.ToString();
         }
     }
 }

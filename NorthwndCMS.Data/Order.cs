@@ -60,12 +60,20 @@ namespace NorthwndCMS.Data
         #region Associations
 
         private EntityRef<Employee> _Employee = new EntityRef<Employee>();
+        private EntitySet<OrderDetail> _OrderDetails = new EntitySet<OrderDetail>();
 
         [Association(Name = "FK_Orders_Employees", IsForeignKey = true, Storage = "_Employee", ThisKey = "_EmployeeId")]
         public Employee Employee
         {
             get { return _Employee.Entity; }
             set { _Employee.Entity = value; }
+        }
+
+        [Association(Storage = "_OrderDetails", OtherKey = "OrderId")]
+        public EntitySet<OrderDetail> OrderDetails
+        {
+            get { return _OrderDetails; }
+            set { _OrderDetails.Assign(value); }
         }
 
         #endregion
