@@ -16,6 +16,7 @@ namespace NorthwndCMS.Data
         public Table<Order> Orders;
         public Table<OrderDetail> OrderDetails;
         public Table<Employee> Employees;
+        public Table<Complaint> Complaints;
 
         #endregion
 
