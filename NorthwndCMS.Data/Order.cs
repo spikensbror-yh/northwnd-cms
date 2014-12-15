@@ -11,6 +11,20 @@ namespace NorthwndCMS.Data
     [Table(Name = "Orders")]
     public class Order
     {
+        #region Properties
+
+        public decimal Price
+        {
+            get { return OrderDetails.Sum(od => od.Price); }
+        }
+
+        public string FormattedPrice
+        {
+            get { return Price.ToString("C"); }
+        }
+
+        #endregion
+
         #region Columns
 
         [Column(Name = "OrderID", IsPrimaryKey = true, IsDbGenerated = true, AutoSync = AutoSync.OnInsert)]

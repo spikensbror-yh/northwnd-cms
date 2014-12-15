@@ -11,6 +11,15 @@ namespace NorthwndCMS.Data
     [Table(Name = "Order Details")]
     public class OrderDetail
     {
+        #region Properties
+
+        public decimal Price
+        {
+            get { return (UnitPrice * Quantity) * (1 - (decimal)Discount); }
+        }
+
+        #endregion
+
         #region Columns
 
         [Column(Name = "OrderID", IsPrimaryKey = true, IsDbGenerated = false)]

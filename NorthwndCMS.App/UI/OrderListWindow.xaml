@@ -10,11 +10,14 @@
                     <GridViewColumn Width="50" DisplayMemberBinding="{Binding Id}">
                         <GridViewColumnHeader Click="List_Sort" Tag="Id" Content="Id"/>
                     </GridViewColumn>
-                    <GridViewColumn Width="200" DisplayMemberBinding="{Binding Customer.CompanyName}">
+                    <GridViewColumn Width="200" DisplayMemberBinding="{Binding CustomerId}">
                         <GridViewColumnHeader Click="List_Sort" Tag="CustomerId" Content="Customer"/>
                     </GridViewColumn>
                     <GridViewColumn Width="200" DisplayMemberBinding="{Binding Employee.FullName}">
                         <GridViewColumnHeader Click="List_Sort" Tag="Employee.FullName" Content="Employee"/>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding FormattedPrice}">
+                        <GridViewColumnHeader Click="List_Sort" Tag="PriceTotal" Content="Price Total"/>
                     </GridViewColumn>
                     <GridViewColumn Width="100" DisplayMemberBinding="{Binding OrderDate}">
                         <GridViewColumnHeader Click="List_Sort" Tag="OrderDate" Content="Order Date"/>
