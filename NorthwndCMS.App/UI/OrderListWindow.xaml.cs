@@ -22,7 +22,7 @@ namespace NorthwndCMS.App.UI
     {
         public Northwind Northwind { get; private set; }
         public IEnumerable<Order> Orders { get; private set; }
-        public Pagination<Order> Page { get; private set; }
+        public Paginator<Order> Paginator { get; private set; }
 
         public OrderListWindow(Northwind northwind, IEnumerable<Order> orders)
         {
@@ -31,21 +31,21 @@ namespace NorthwndCMS.App.UI
             Northwind = northwind;
             Orders = orders;
 
-            Page = new Pagination<Order>(Orders);
-            OrderList.ItemsSource = Page.Current();
-            PageLabel.Content = Page.ToString();
+            Paginator = new Paginator<Order>(Orders);
+            OrderList.ItemsSource = Paginator.Current();
+            PageLabel.Content = Paginator.ToString();
         }
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.ItemsSource = Page.Next();
-            PageLabel.Content = Page.ToString();
+            OrderList.ItemsSource = Paginator.Next();
+            PageLabel.Content = Paginator.ToString();
         }
 
         private void PreviousButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderList.ItemsSource = Page.Previous();
-            PageLabel.Content = Page.ToString();
+            OrderList.ItemsSource = Paginator.Previous();
+            PageLabel.Content = Paginator.ToString();
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)

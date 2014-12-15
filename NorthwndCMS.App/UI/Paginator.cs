@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NorthwndCMS.App.UI
 {
-    public class Pagination<T>
+    public class Paginator<T>
     {
         #region Constants
 
@@ -28,7 +28,7 @@ namespace NorthwndCMS.App.UI
 
         #region Constructor
 
-        public Pagination(IEnumerable<T> entities, int page = 1, int perPage = DEFAULT_PER_PAGE)
+        public Paginator(IEnumerable<T> entities, int page = 1, int perPage = DEFAULT_PER_PAGE)
         {
             Entities = entities;
             Page = page;
