@@ -33,6 +33,7 @@ namespace NorthwndCMS.Data
         #region Associations
 
         private EntityRef<Order> _Order = new EntityRef<Order>();
+        private EntityRef<Product> _Product = new EntityRef<Product>();
 
         [Association(Name = "FK_Order_Details_Orders", IsForeignKey = true, Storage = "_Order", ThisKey = "OrderId")]
         public Order Order
@@ -41,7 +42,12 @@ namespace NorthwndCMS.Data
             set { _Order.Entity = value; }
         }
 
-        // TODO: Product association.
+        [Association(Name = "FK_Order_Details_Products", IsForeignKey = true, Storage = "_Product", ThisKey = "ProductId")]
+        public Product Product
+        {
+            get { return _Product.Entity; }
+            set { _Product.Entity = value; }
+        }
 
         #endregion
     }
