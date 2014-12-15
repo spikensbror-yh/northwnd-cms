@@ -30,8 +30,8 @@ namespace NorthwndCMS.App.UI
 
             Northwind = northwind;
             Orders = orders;
-
             Paginator = new Paginator<Order>(Orders);
+
             OrderList.ItemsSource = Paginator.Current();
             PageLabel.Content = Paginator.ToString();
         }
@@ -50,8 +50,9 @@ namespace NorthwndCMS.App.UI
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            var selected = OrderList.SelectedItems;
-            foreach (Order order in selected)
+            // TODO: Cascading delete to remove order details as well.
+
+            foreach (Order order in OrderList.SelectedItems)
             {
                 Northwind.Orders.DeleteOnSubmit(order);
             }
