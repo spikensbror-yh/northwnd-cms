@@ -14,8 +14,8 @@ namespace NorthwndCMS.App.UI
     {
         #region Constants
 
-        private const Geometry ASCENDING = Geometry.Parse("M 0,0 L 10,0 L 5,5 Z");
-        private const Geometry DESCENDING = Geometry.Parse("M 0,5 L 10,5 L 5,0 Z");
+        private readonly static Geometry ASCENDING = Geometry.Parse("M 0,0 L 10,0 L 5,5 Z");
+        private readonly static Geometry DESCENDING = Geometry.Parse("M 0,5 L 10,5 L 5,0 Z");
 
         #endregion
 
