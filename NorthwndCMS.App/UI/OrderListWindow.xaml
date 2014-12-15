@@ -10,7 +10,7 @@
                     <GridViewColumn Width="50" DisplayMemberBinding="{Binding Id}">
                         <GridViewColumnHeader Click="List_Sort" Tag="Id" Content="Id"/>
                     </GridViewColumn>
-                    <GridViewColumn Width="200" DisplayMemberBinding="{Binding CustomerId}">
+                    <GridViewColumn Width="200" DisplayMemberBinding="{Binding Customer.CompanyName}">
                         <GridViewColumnHeader Click="List_Sort" Tag="CustomerId" Content="Customer"/>
                     </GridViewColumn>
                     <GridViewColumn Width="200" DisplayMemberBinding="{Binding Employee.FullName}">
